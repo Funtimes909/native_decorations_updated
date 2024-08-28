@@ -1,10 +1,10 @@
 {
   "variants": {
     "bushy=false": {
-      "model": "native_decorations:block/bush/acacia_bush"
+      "model": "fresh_decorations:block/bush/acacia_bush"
     },
     "bushy=true": {
-      "model": "native_decorations:block/bush/bushy/acacia_bush"
+      "model": "fresh_decorations:block/bush/bushy/acacia_bush"
     }
   }
 }

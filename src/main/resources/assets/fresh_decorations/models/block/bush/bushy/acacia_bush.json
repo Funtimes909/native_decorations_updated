@@ -2,5 +2,5 @@
   "textures": {
     "leaves": "minecraft:block/acacia_leaves"
   },
-  "parent": "native_decorations:block/bush/bushy/bushy"
+  "parent": "fresh_decorations:block/bush/bushy/bushy"
 }

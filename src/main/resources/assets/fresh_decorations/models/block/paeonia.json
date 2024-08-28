@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "native_decorations:block/paeonia"
+    "cross": "fresh_decorations:block/paeonia"
   }
 }

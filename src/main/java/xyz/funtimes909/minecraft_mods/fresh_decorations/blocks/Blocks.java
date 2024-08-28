@@ -17,12 +17,14 @@ public class Blocks {
   public static RockBlock diorite_rock = new RockBlock();
   public static RockBlock andesite_rock = new RockBlock();
   public static RockBlock cobblestone_rock = new RockBlock();
+  public static RockBlock cobbled_deepslate_rock = new RockBlock();
   public static BushyBushBlock oak_bush = new BushyBushBlock();
   public static BushyBushBlock spruce_bush = new BushyBushBlock();
   public static BushyBushBlock birch_bush = new BushyBushBlock();
   public static BushyBushBlock jungle_bush = new BushyBushBlock();
   public static BushyBushBlock acacia_bush = new BushyBushBlock();
   public static BushyBushBlock dark_oak_bush = new BushyBushBlock();
+  public static BushyBushBlock mangrove_bush = new BushyBushBlock();
   public static BushyBushBlock azalea_bush = new BushyBushBlock(BushBlock.DEFAULT_SETTINGS.sounds(BlockSoundGroup.AZALEA_LEAVES));
   public static BushyBushBlock flowering_azalea_bush = new BushyBushBlock(BushBlock.DEFAULT_SETTINGS.sounds(BlockSoundGroup.AZALEA_LEAVES));
   public static LogPileBlock oak_log_pile = new LogPileBlock();
@@ -31,6 +33,7 @@ public class Blocks {
   public static LogPileBlock jungle_log_pile = new LogPileBlock();
   public static LogPileBlock acacia_log_pile = new LogPileBlock();
   public static LogPileBlock dark_oak_log_pile = new LogPileBlock();
+  public static LogPileBlock mangrove_log_pile = new LogPileBlock();
   public static LogPileBlock crimson_stem_pile = new LogPileBlock(LogPileBlock.NETHER_SETTINGS);
   public static LogPileBlock warped_stem_pile = new LogPileBlock(LogPileBlock.NETHER_SETTINGS);
   public static FlowerBlock paeonia = new FlowerBlock(StatusEffects.REGENERATION, 8, Block.Settings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offsetType(AbstractBlock.OffsetType.XZ));
@@ -42,12 +45,14 @@ public class Blocks {
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "andesite_rock"), andesite_rock);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "diorite_rock"), diorite_rock);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "cobblestone_rock"), cobblestone_rock);
+    Registry.register(Registry.BLOCK, new Identifier(Main.ID, "cobbled_deepslate_rock"), cobbled_deepslate_rock);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "oak_bush"), oak_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "spruce_bush"), spruce_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "birch_bush"), birch_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "jungle_bush"), jungle_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "acacia_bush"), acacia_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "dark_oak_bush"), dark_oak_bush);
+    Registry.register(Registry.BLOCK, new Identifier(Main.ID, "mangrove_bush"), mangrove_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "azalea_bush"), azalea_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "flowering_azalea_bush"), flowering_azalea_bush);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "oak_log_pile"), oak_log_pile);
@@ -56,6 +61,7 @@ public class Blocks {
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "jungle_log_pile"), jungle_log_pile);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "acacia_log_pile"), acacia_log_pile);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "dark_oak_log_pile"), dark_oak_log_pile);
+    Registry.register(Registry.BLOCK, new Identifier(Main.ID, "mangrove_log_pile"), mangrove_log_pile);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "crimson_stem_pile"), crimson_stem_pile);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "warped_stem_pile"), warped_stem_pile);
     Registry.register(Registry.BLOCK, new Identifier(Main.ID, "paeonia"), paeonia);

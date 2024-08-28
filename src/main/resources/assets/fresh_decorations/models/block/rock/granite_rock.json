@@ -2,5 +2,5 @@
   "textures": {
     "rock": "minecraft:block/granite"
   },
-  "parent": "native_decorations:block/rock/rock"
+  "parent": "fresh_decorations:block/rock/rock"
 }

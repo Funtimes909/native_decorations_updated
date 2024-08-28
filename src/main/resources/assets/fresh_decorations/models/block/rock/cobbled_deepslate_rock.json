@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "rock": "minecraft:block/cobbled_deepslate"
+  },
+  "parent": "fresh_decorations:block/rock/rock"
+}

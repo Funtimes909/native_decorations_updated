@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "native_decorations:block/rock/diorite_rock"
+      "model": "fresh_decorations:block/rock/diorite_rock"
     }
   }
 }

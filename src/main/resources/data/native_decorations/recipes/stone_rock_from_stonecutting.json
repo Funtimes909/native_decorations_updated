@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:stone"
-    },
-    "result": "native_decorations:stone_rock",
-    "count": 1
-}

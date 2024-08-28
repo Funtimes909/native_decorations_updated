@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "leaves": "minecraft:block/mangrove_leaves"
+  },
+  "parent": "fresh_decorations:block/bush/bush"
+}

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "native_decorations:block/paeonia"
+      "model": "fresh_decorations:block/paeonia"
     }
   }
 }

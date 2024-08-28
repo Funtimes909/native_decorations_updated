@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "native_decorations:block/paeonia"
+    "layer0": "fresh_decorations:block/paeonia"
   }
 }
