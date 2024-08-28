@@ -1,13 +1,12 @@
-//  Sqaaakois Fabric Mod Build Script
-//  Version 1.6 for Minecraft 1.19.2
+//  Modified version of Sqaaakoi's original build script, original here https://github.com/TangleProject/TemplateMod/blob/main/build.gradle
 
 plugins {
-  id 'fabric-loom' version '1.0-SNAPSHOT'
+  id 'fabric-loom' version '1.7-SNAPSHOT'
   id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 
 import groovy.json.JsonSlurper
 
@@ -18,41 +17,38 @@ def version_time = date.format("dd-MM-yyyy'-'HH-mm-ss")
 def folder_time = date.format("dd-MM-yyyy'/'HH-mm-ss")
 
 //  Configuration
-
 def config = (new JsonSlurper()).parseText(new File("./config.json").text)
 
 //  Mod metadata
 def mod = [
-  id: config.get("mod").get("id"),
-  name: config.get("mod").get("name"),
-  version: config.get("mod").get("version")
+        id: config.get("mod").get("id"),
+        name: config.get("mod").get("name"),
+        version: config.get("mod").get("version")
 ]
 
 //  Package name
 def packageGroup = config.get("package") + "." + mod.id
 
 //  Versions
-def dep_versions = [
-  minecraft: config.get("dependencies").get("minecraft"),
-  mappings: config.get("dependencies").get("mappings"),
-  fabric_loader: config.get("dependencies").get("fabric_loader"),
-  fabric_api: config.get("dependencies").get("fabric_api"),
-  modmenu: config.get("dependencies").get("modmenu")
+def dependency_versions = [
+        minecraft: config.get("dependencies").get("minecraft"),
+        mappings: config.get("dependencies").get("mappings"),
+        fabric_loader: config.get("dependencies").get("fabric_loader"),
+        fabric_api: config.get("dependencies").get("fabric_api"),
+        modmenu: config.get("dependencies").get("modmenu")
 ]
 
 // Set player username
-
 boolean enableUsername = config.get("enable_username")
-def usernameArgument = project.getProperties().get("username")
 def username = ""
 
-if (usernameArgument == null && enableUsername) {
+if (enableUsername) {
   username = System.getProperty("user.name").replaceAll(" ", "_")
   username = username.substring(0, Math.min(username.length(), 16));
 } else if (username.length <= 0) {
   username = "";
 } else {
-  username = usernameArgument;
+  username = "";
 }
 
 //  Setup run folder from template
@@ -71,8 +67,8 @@ archivesBaseName = mod.id
 libsDirName = "../out/${folder_time}"
 
 compileJava {
-    options.compilerArgs << "-Xlint"
-    options.compilerArgs << "-Xlint:-processing"
+  options.compilerArgs << "-Xlint"
+  options.compilerArgs << "-Xlint:-processing"
 }
 
 repositories {
@@ -82,11 +78,11 @@ repositories {
   // See https://docs.gradle.org/current/userguide/declaring_repositories.html
   // for more information about repositories.
   flatDir {
-      dirs 'libs'
+    dirs 'libs'
   }
   for (i in config.get("dependencies").get("maven_repositories")) {
     maven {
-        url = i
+      url = i
     }
   }
 }
@@ -94,13 +90,12 @@ repositories {
 dependencies {
   // Nullable annotations
   implementation 'com.google.code.findbugs:jsr305:3.0.2'
-  // To change the versions see the dep_versions object
-  minecraft "com.mojang:minecraft:${dep_versions.minecraft}"
-  mappings "net.fabricmc:yarn:" + dep_versions.mappings + ":v2"
-  modImplementation "net.fabricmc:fabric-loader:${dep_versions.fabric_loader}"
 
-  // Fabric API. This is technically optional, but you probably want it anyway.
-  modImplementation "net.fabricmc.fabric-api:fabric-api:${dep_versions.fabric_api}"
+  // To change the versions see the dependency_versions object
+  minecraft "com.mojang:minecraft:${dependency_versions.minecraft}"
+  mappings "net.fabricmc:yarn:" + dependency_versions.mappings + ":v2"
+  modImplementation "net.fabricmc:fabric-loader:${dependency_versions.fabric_loader}"
+  modImplementation "net.fabricmc.fabric-api:fabric-api:${dependency_versions.fabric_api}"
 
 
   for (i in config.get("dependencies").get("libraries")) {
@@ -147,16 +142,16 @@ loom {
 processResources {
   filesMatching("fabric.mod.json") {
     filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: [
-      "mod_id": mod.id,
-      "mod_name": mod.name,
-      "package": packageGroup,
-      "minecraft_version": dep_versions.minecraft,
-      "version": project.version
+            "mod_id": mod.id,
+            "mod_name": mod.name,
+            "package": packageGroup,
+            "minecraft_version": dep_versions.minecraft,
+            "version": project.version
     ])
   }
   filesMatching(mod.id + ".mixins.json") {
     filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: [
-      "package": packageGroup
+            "package": packageGroup
     ])
   }
 }

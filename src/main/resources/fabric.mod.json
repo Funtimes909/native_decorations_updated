@@ -1,29 +1,36 @@
 {
   "schemaVersion": 1,
-  "id": "@mod_id@",
-  "version": "@version@",
-  "name": "@mod_name@",
-  "description": "Adds more decoration blocks that fit perfectly into your worlds.",
+  "id": "fresh_decorations",
+  "version": "0.1",
+  "name": "Fresh Decorations",
+  "description": "Updated version of Native Decorations",
   "authors": [
+    "Funtimes909",
     "Sqaaakoi"
   ],
   "contact": {
+    "sources": "https://github.com/Funtimes909/Fresh-Decorations"
   },
-  "icon": "assets/@mod_id@/icon.png",
+  "icon": "assets/fresh_decorations/icon.png",
   "environment": "*",
-  "accessWidener": "@mod_id@.accesswidener",
+  "accessWidener": "fresh_decorations.accesswidener",
   "entrypoints": {
     "main": [
-      "@package@.Main"
+      "xyz.funtimes909.minecraft_mods.fresh_decorations.Main"
     ]
   },
   "mixins": [
-    "@mod_id@.mixins.json"
+    "fresh_decorations.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "java": ">=21",
+    "minecraft": ">=1.21.1",
+    "fabricloader": ">=0.16.2",
     "fabric": "*",
-    "minecraft": ">=@minecraft_version@"
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
   },
   "license": "MIT"
 }

@@ -1,15 +1,15 @@
 {
-  "package": "xyz.sqaaakoi.minecraft_mods",
+  "package": "xyz.funtimes909.minecraft_mods",
   "mod": {
-    "id": "native_decorations",
-    "name": "Native Decorations",
-    "version": "0.3"
+    "id": "fresh_decorations",
+    "name": "Fresh Decorations",
+    "version": "0.1"
   },
   "dependencies": {
-    "minecraft": "1.19.2",
-    "mappings": "1.19.2+build.28",
-    "fabric_loader": "0.14.10",
-    "fabric_api": "0.64.0+1.19.2",
+    "minecraft": "1.21.1",
+    "mappings": "1.21.1+build.3",
+    "fabric_loader": "0.16.2",
+    "fabric_api": "0.102.1+1.21.1",
     "maven_repositories": [
       "https://maven.terraformersmc.com/releases/"
     ],
