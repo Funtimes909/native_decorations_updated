@@ -6,8 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import java.util.Map.Entry;
 
 public class LootTablePatcher {

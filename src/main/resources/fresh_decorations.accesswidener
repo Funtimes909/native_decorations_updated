@@ -1,13 +1,15 @@
-accessWidener v1 named
-accessible method net/minecraft/block/Material$Builder lightPassesThrough ()Lnet/minecraft/block/Material$Builder;
-accessible method net/minecraft/block/Material$Builder destroyedByPiston ()Lnet/minecraft/block/Material$Builder;
-accessible method net/minecraft/block/Material$Builder burnable ()Lnet/minecraft/block/Material$Builder;
-accessible method net/minecraft/block/StairsBlock <init> (Lnet/minecraft/block/BlockState;Lnet/minecraft/block/AbstractBlock$Settings;)V
-accessible method net/minecraft/world/gen/stateprovider/SimpleBlockStateProvider <init> (Lnet/minecraft/block/BlockState;)V
-accessible method net/minecraft/world/biome/OverworldBiomeCreator addBasicFeatures (Lnet/minecraft/world/biome/GenerationSettings$Builder;)V
-accessible method net/minecraft/world/biome/OverworldBiomeCreator createBiome (Lnet/minecraft/world/biome/Biome$Precipitation;FFLnet/minecraft/world/biome/SpawnSettings$Builder;Lnet/minecraft/world/biome/GenerationSettings$Builder;Lnet/minecraft/sound/MusicSound;)Lnet/minecraft/world/biome/Biome;
-accessible method net/minecraft/world/biome/OverworldBiomeCreator getSkyColor (F)I
-accessible field net/minecraft/loot/LootTable$Builder pools Ljava/util/List;
-accessible field net/minecraft/loot/LootPool entries [Lnet/minecraft/loot/entry/LootPoolEntry;
+accessWidener v2 named
+accessible method net/minecraft/client/color/world/BiomeColors getColor (Lnet/minecraft/world/BlockRenderView;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/world/biome/ColorResolver;)I
+#accessible method net/minecraft/block/Material$Builder lightPassesThrough ()Lnet/minecraft/block/Material$Builder;
+#accessible method net/minecraft/block/Material$Builder destroyedByPiston ()Lnet/minecraft/block/Material$Builder;
+#accessible method net/minecraft/block/Material$Builder burnable ()Lnet/minecraft/block/Material$Builder;
+#accessible method net/minecraft/block/StairsBlock <init> (Lnet/minecraft/block/BlockState;Lnet/minecraft/block/AbstractBlock$Settings;)V
+#accessible method net/minecraft/world/gen/stateprovider/SimpleBlockStateProvider <init> (Lnet/minecraft/block/BlockState;)V
+#accessible method net/minecraft/world/biome/OverworldBiomeCreator addBasicFeatures (Lnet/minecraft/world/biome/GenerationSettings$Builder;)V
+#accessible method net/minecraft/world/biome/OverworldBiomeCreator createBiome (Lnet/minecraft/world/biome/Biome$Precipitation;FFLnet/minecraft/world/biome/SpawnSettings$Builder;Lnet/minecraft/world/biome/GenerationSettings$Builder;Lnet/minecraft/sound/MusicSound;)Lnet/minecraft/world/biome/Biome;
+#accessible method net/minecraft/world/biome/OverworldBiomeCreator getSkyColor (F)I
+#accessible field net/minecraft/loot/entry/ItemEntry item Lnet/minecraft/registry/entry/RegistryEntry;
 accessible field net/minecraft/loot/entry/ItemEntry item Lnet/minecraft/item/Item;
-mutable field net/minecraft/loot/entry/ItemEntry item Lnet/minecraft/item/Item;
+#accessible field net/minecraft/loot/LootTable$Builder pools Ljava/util/List;
+#accessible field net/minecraft/loot/LootPool entries [Lnet/minecraft/loot/entry/LootPoolEntry;
+#mutable field net/minecraft/loot/entry/ItemEntry item Lnet/minecraft/item/Item;

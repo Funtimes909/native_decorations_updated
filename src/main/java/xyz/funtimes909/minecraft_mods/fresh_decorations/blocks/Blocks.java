@@ -9,7 +9,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class Blocks {
   public static RockBlock stone_rock = new RockBlock();

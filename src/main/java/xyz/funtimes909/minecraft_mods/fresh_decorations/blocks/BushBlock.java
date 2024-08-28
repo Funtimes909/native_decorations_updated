@@ -1,7 +1,7 @@
 package xyz.funtimes909.minecraft_mods.fresh_decorations.blocks;
 
-import net.minecraft.util.math.random.Random;
 import java.lang.SuppressWarnings;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
