@@ -1,12 +1,13 @@
 package xyz.funtimes909.minecraft_mods.fresh_decorations.items;
 
+import net.minecraft.registry.Registries;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.Main;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.blocks.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.registry.Registry;
 
 public class Items {
 
@@ -35,29 +36,29 @@ public class Items {
   public static Item twig = new Item(new Item.Settings().group(ItemGroup.MISC));
 
   public static void register() {
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "stone_rock"), stone_rock);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "granite_rock"), granite_rock);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "diorite_rock"), diorite_rock);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "andesite_rock"), andesite_rock);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "cobblestone_rock"), cobblestone_rock);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "oak_bush"), oak_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "spruce_bush"), spruce_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "birch_bush"), birch_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "jungle_bush"), jungle_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "acacia_bush"), acacia_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "dark_oak_bush"), dark_oak_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "azalea_bush"), azalea_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "flowering_azalea_bush"), flowering_azalea_bush);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "oak_log_pile"), oak_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "spruce_log_pile"), spruce_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "birch_log_pile"), birch_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "jungle_log_pile"), jungle_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "acacia_log_pile"), acacia_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "dark_oak_log_pile"), dark_oak_log_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "crimson_stem_pile"), crimson_stem_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "warped_stem_pile"), warped_stem_pile);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "paeonia"), paeonia);
-    Registry.register(Registry.ITEM, new Identifier(Main.ID, "twig"), twig);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "stone_rock"), stone_rock);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "granite_rock"), granite_rock);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "diorite_rock"), diorite_rock);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "andesite_rock"), andesite_rock);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "cobblestone_rock"), cobblestone_rock);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "oak_bush"), oak_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "spruce_bush"), spruce_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "birch_bush"), birch_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "jungle_bush"), jungle_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "acacia_bush"), acacia_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "dark_oak_bush"), dark_oak_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "azalea_bush"), azalea_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "flowering_azalea_bush"), flowering_azalea_bush);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "oak_log_pile"), oak_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "spruce_log_pile"), spruce_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "birch_log_pile"), birch_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "jungle_log_pile"), jungle_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "acacia_log_pile"), acacia_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "dark_oak_log_pile"), dark_oak_log_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "crimson_stem_pile"), crimson_stem_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "warped_stem_pile"), warped_stem_pile);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "paeonia"), paeonia);
+    Registry.register(Registries.ITEM, new Identifier(Main.ID, "twig"), twig);
   }
 
 }

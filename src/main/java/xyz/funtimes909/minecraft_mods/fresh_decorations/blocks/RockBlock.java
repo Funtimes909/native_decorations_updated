@@ -4,7 +4,6 @@ import java.lang.SuppressWarnings;
 import net.minecraft.block.Block;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +17,7 @@ import net.minecraft.world.BlockView;
 
 public class RockBlock extends FallingBlock {
 
-  private static final Material MATERIAL = new Material.Builder(MapColor.STONE_GRAY).lightPassesThrough().destroyedByPiston().build();
+//  private static final Material MATERIAL = new Material.Builder(MapColor.STONE_GRAY).lightPassesThrough().destroyedByPiston().build();
 
   private static final VoxelShape ROCK_X = Block.createCuboidShape(2.0, 0.0, 4.0, 14.0, 6.0, 12.0);
   private static final VoxelShape ROCK_Z = Block.createCuboidShape(4.0, 0.0, 2.0, 12.0, 6.0, 14.0);
@@ -27,7 +26,7 @@ public class RockBlock extends FallingBlock {
   private static VoxelShape ROCK_SHAPE = VoxelShapes.combineAndSimplify(ROCK_Y, VoxelShapes.combineAndSimplify(ROCK_X, ROCK_Z, BooleanBiFunction.OR), BooleanBiFunction.OR);
 
   public RockBlock() {
-    super(Block.Settings.of(MATERIAL).strength(0.35f).sounds(BlockSoundGroup.STONE));
+    super(Block.Settings.create().strength(0.35f).sounds(BlockSoundGroup.STONE));
   }
 
   @Override
