@@ -14,6 +14,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.floatprovider.ConstantFloatProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.Heightmap;
@@ -54,7 +55,7 @@ public class Features {
   public static final ConfiguredFeature<?, ?> configured_trees_oak = new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfig(List.of(new RandomFeatureEntry(TreePlacedFeatures.FANCY_OAK_BEES_0002, 0.1f)), TreePlacedFeatures.OAK_BEES_0002));
   public static final RegistryKey<ConfiguredFeature<?, ?>> key_configured_trees_oak = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Main.ID, "trees_oak");
   public static final PlacedFeature placed_trees_oak = new PlacedFeature(RegistryEntryLookup.of(configured_trees_oak), VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(10, 0.1f, 1)));
-  public static final RegistryKey<PlacedFeature> key_placed_trees_oak = RegistryKey.of(Registries.FEATURE, Main.ID, "trees_oak");
+  public static final RegistryKey<PlacedFeature> key_placed_trees_oak = RegistryKey.of(Registries.FEATURE, Identifier.of("trees_oak"));
 
   public static final ConfiguredFeature<?, ?> configured_trees_big_oak = new ConfiguredFeature<>(feature_big_oak_tree, DefaultFeatureConfig.INSTANCE);
   public static final RegistryKey<ConfiguredFeature<?, ?>> key_configured_trees_big_oak = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Main.ID, "trees_big_oak");
@@ -147,7 +148,7 @@ public class Features {
     Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, key_configured_cobblestone_rock.getValue(), configured_cobblestone_rock);
     Registry.register(BuiltinRegistries.PLACED_FEATURE, key_placed_cobblestone_rock.getValue(), placed_cobblestone_rock);
     BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.VEGETAL_DECORATION, key_placed_cobblestone_rock);
-    
+
     Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, key_configured_big_rock.getValue(), configured_big_rock);
     Registry.register(BuiltinRegistries.PLACED_FEATURE, key_placed_big_rock.getValue(), placed_big_rock);
     BiomeModifications.addFeature(BiomeSelectors.tag(BIG_ROCK), GenerationStep.Feature.VEGETAL_DECORATION, key_placed_big_rock);

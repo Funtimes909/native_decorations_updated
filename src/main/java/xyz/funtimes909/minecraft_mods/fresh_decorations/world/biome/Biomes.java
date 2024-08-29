@@ -4,6 +4,7 @@ import xyz.funtimes909.minecraft_mods.fresh_decorations.Main;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.world.gen.features.Features;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.BuiltinRegistries;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.RegistryKey;
@@ -20,10 +21,10 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 public class Biomes {
 
   public static Biome biome_oak_forest = null;
-  public static final RegistryKey<Biome> key_biome_oak_forest = RegistryKey.of(Registry.BIOME_KEY, new Identifier(Main.ID, "oak_forest"));
+  public static final RegistryKey<Biome> key_biome_oak_forest = RegistryKey.of(Registry.BIOME_KEY, Main.ID, "oak_forest");
 
   public static Biome biome_big_oak_forest = null;
-  public static final RegistryKey<Biome> key_biome_big_oak_forest = RegistryKey.of(Registry.BIOME_KEY, new Identifier(Main.ID, "big_oak_forest"));
+  public static final RegistryKey<Biome> key_biome_big_oak_forest = RegistryKey.of(Registry.BIOME_KEY, Main.ID, "big_oak_forest");
 
   public static Biome create_oak_forest() {
     SpawnSettings.Builder sps = new SpawnSettings.Builder();
