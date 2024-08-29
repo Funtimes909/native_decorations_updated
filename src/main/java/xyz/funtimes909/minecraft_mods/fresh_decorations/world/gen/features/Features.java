@@ -4,12 +4,12 @@ import xyz.funtimes909.minecraft_mods.fresh_decorations.Main;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.blocks.Blocks;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.blocks.BushyBushBlock;
 import xyz.funtimes909.minecraft_mods.fresh_decorations.blocks.LogPileBlock;
-import java.util.List;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 import net.minecraft.registry.BuiltinRegistries;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
@@ -33,6 +33,7 @@ import net.minecraft.world.gen.placementmodifier.HeightmapPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import java.util.List;
 
 public class Features {
 
@@ -53,7 +54,7 @@ public class Features {
   public static final ConfiguredFeature<?, ?> configured_trees_oak = new ConfiguredFeature<>(Feature.RANDOM_SELECTOR, new RandomFeatureConfig(List.of(new RandomFeatureEntry(TreePlacedFeatures.FANCY_OAK_BEES_0002, 0.1f)), TreePlacedFeatures.OAK_BEES_0002));
   public static final RegistryKey<ConfiguredFeature<?, ?>> key_configured_trees_oak = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Main.ID, "trees_oak");
   public static final PlacedFeature placed_trees_oak = new PlacedFeature(RegistryEntryLookup.of(configured_trees_oak), VegetationPlacedFeatures.modifiers(PlacedFeatures.createCountExtraModifier(10, 0.1f, 1)));
-  public static final RegistryKey<PlacedFeature> key_placed_trees_oak = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Main.ID, "trees_oak");
+  public static final RegistryKey<PlacedFeature> key_placed_trees_oak = RegistryKey.of(Registries.FEATURE, Main.ID, "trees_oak");
 
   public static final ConfiguredFeature<?, ?> configured_trees_big_oak = new ConfiguredFeature<>(feature_big_oak_tree, DefaultFeatureConfig.INSTANCE);
   public static final RegistryKey<ConfiguredFeature<?, ?>> key_configured_trees_big_oak = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY, Main.ID, "trees_big_oak");
@@ -131,11 +132,11 @@ public class Features {
   public static final RegistryKey<PlacedFeature> key_placed_dark_oak_bush = RegistryKey.of(Registry.PLACED_FEATURE_KEY, Main.ID, "dark_oak_bush");
 
   public static void register() {
-    Registry.register(Registry.FEATURE, Main.ID, "rock"), feature_rock);
-    Registry.register(Registry.FEATURE, Main.ID, "big_rock"), feature_big_rock);
-    Registry.register(Registry.FEATURE, Main.ID, "bush"), feature_bush);
-    Registry.register(Registry.FEATURE, Main.ID, "big_oak_tree"), feature_big_oak_tree);
-    Registry.register(Registry.FEATURE, Main.ID, "log_pile"), feature_log_pile);
+    Registry.register(Registry.FEATURE, Main.ID, "rock");
+    Registry.register(Registry.FEATURE, Main.ID, "big_rock");
+    Registry.register(Registry.FEATURE, Main.ID, "bush");
+    Registry.register(Registry.FEATURE, Main.ID, "big_oak_tree");
+    Registry.register(Registry.FEATURE, Main.ID, "log_pile");
 
     Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, key_configured_trees_oak.getValue(), configured_trees_oak);
     Registry.register(BuiltinRegistries.PLACED_FEATURE, key_placed_trees_oak.getValue(), placed_trees_oak);
