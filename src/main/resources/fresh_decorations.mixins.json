@@ -1,10 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "@package@.mixins",
+  "package": "xyz.funtimes909.minecraft_mods.fresh_decorations.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ShearsItemMixin",
+    "ShearsItemMixin"
   ],
   "client": [
     "BlockColorsMixin",

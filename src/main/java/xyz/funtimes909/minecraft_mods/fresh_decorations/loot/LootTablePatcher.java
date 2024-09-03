@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.registry.Registry;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import java.util.Map.Entry;
 
@@ -17,7 +17,7 @@ public class LootTablePatcher {
 
   public static void patchLeavesLootTable() {
     LootTableEvents.MODIFY.register((resourceManager, lootManager, id, table, source) -> {
-      for (Entry<RegistryKey<Block>, Block> entry : Registry.BLOCK.getEntrySet()) {
+      for (Entry<RegistryKey<Block>, Block> entry : Registries.BLOCK.getEntrySet()) {
         Block b = entry.getValue();
         if (entry.getKey().getValue().toString().endsWith("leaves") && b.getLootTableId().equals(id)) {
           for (LootPool p : table.pools) {

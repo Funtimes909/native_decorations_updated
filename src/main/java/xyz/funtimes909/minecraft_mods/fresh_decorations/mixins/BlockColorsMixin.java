@@ -13,11 +13,11 @@ public class BlockColorsMixin {
   @Inject(method = "create()Lnet/minecraft/client/color/block/BlockColors;", at = @At("RETURN"), cancellable = true)
   private static void register(CallbackInfoReturnable<BlockColors> cir) {
     BlockColors bc = cir.getReturnValue();
-    bc.registerColorProvider((state, world, pos, tintIndex) -> BiomeColors.getFoliageColor(), Blocks.spruce_bush);
-    bc.registerColorProvider((state, world, pos, tintIndex) -> BiomeColors.getFoliageColor(), Blocks.birch_bush);
+    bc.registerColorProvider((state, world, pos, tintIndex) -> BiomeColors.getFoliageColor(world, pos), Blocks.spruce_bush);
+    bc.registerColorProvider((state, world, pos, tintIndex) -> BiomeColors.getFoliageColor(world, pos), Blocks.birch_bush);
     bc.registerColorProvider((state, world, pos, tintIndex) -> {
       if (world == null || pos == null) {
-        return BiomeColors.getFoliageColor();
+        return BiomeColors.getFoliageColor(world, pos);
       }
       return BiomeColors.getFoliageColor(world, pos);
     }, Blocks.oak_bush, Blocks.jungle_bush, Blocks.acacia_bush, Blocks.dark_oak_bush);
