@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
@@ -21,10 +22,10 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 public class Biomes {
 
   public static Biome biome_oak_forest = null;
-  public static final RegistryKey<Biome> key_biome_oak_forest = RegistryKey.of(Registry.BIOME_KEY, Main.ID, "oak_forest");
+  public static final RegistryKey<Biome> key_biome_oak_forest = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(Main.ID, "oak_forest"));
 
   public static Biome biome_big_oak_forest = null;
-  public static final RegistryKey<Biome> key_biome_big_oak_forest = RegistryKey.of(Registry.BIOME_KEY, Main.ID, "big_oak_forest");
+  public static final RegistryKey<Biome> key_biome_big_oak_forest = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(Main.ID, "big_oak_forest"));
 
   public static Biome create_oak_forest() {
     SpawnSettings.Builder sps = new SpawnSettings.Builder();
@@ -33,13 +34,13 @@ public class Biomes {
 
     GenerationSettings.Builder gens = new GenerationSettings.Builder();
     // Defaults
-    OverworldBiomeCreator.addBasicFeatures(gens);
+    OverworldBiomeCreator.addBasicFeatures((GenerationSettings.LookupBackedBuilder) gens);
 
     //  Forest defaults
-    DefaultBiomeFeatures.addDefaultOres(gens);
-    DefaultBiomeFeatures.addDefaultDisks(gens);
-    DefaultBiomeFeatures.addDefaultFlowers(gens);
-    DefaultBiomeFeatures.addForestGrass(gens);
+    DefaultBiomeFeatures.addDefaultOres((GenerationSettings.LookupBackedBuilder) gens);
+    DefaultBiomeFeatures.addDefaultDisks((GenerationSettings.LookupBackedBuilder) gens);
+    DefaultBiomeFeatures.addDefaultFlowers((GenerationSettings.LookupBackedBuilder) gens);
+    DefaultBiomeFeatures.addForestGrass((GenerationSettings.LookupBackedBuilder) gens);
 
     //  Custom trees (oak only)
     gens.feature(GenerationStep.Feature.VEGETAL_DECORATION, RegistryEntry.of(Features.placed_trees_oak));
